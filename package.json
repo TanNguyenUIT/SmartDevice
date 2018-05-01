@@ -2,6 +2,7 @@
   "name": "SmartDevice",
   "version": "0.1.0",
   "private": true,
+  "author": "Tan Nguyen",
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint": "^4.19.1",
@@ -17,17 +18,26 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "rndebugger-open"
   },
   "jest": {
     "preset": "react-native"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "es6-symbol": "^3.1.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-debugger-open": "^0.3.17",
     "react-native-vector-icons": "^4.6.0",
-    "react-navigation": "^1.5.11",
+    "react-navigation": "1.0.0-beta.11",
+    "react-redux": "^5.0.7",
     "recompose": "^0.27.0",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-api-call": "0.3.14",
+    "redux-observable": "^0.18.0",
+    "redux-persist": "4.9.1",
+    "rxjs": "5.4.3"
   }
 }
