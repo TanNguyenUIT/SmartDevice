@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
 
 const Home = () => (
   <View style={styles.main}>
-    <Text>This is homepage</Text>
+    <Text>This is control device</Text>
   </View>
 );
 

@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TabNavigator } from 'react-navigation';
 
-import HomeScreen from './Home';
-import InformationScreen from './Information';
+import HomeScreen from './Home/HomeIndex';
+import InformationScreen from './Information/InformationIndex';
 
 const styles = StyleSheet.create({
   label: {
