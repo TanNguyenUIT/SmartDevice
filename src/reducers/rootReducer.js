@@ -1,15 +1,22 @@
-import { combineReducers } from 'redux';
-import { reducers as apiReducer } from 'redux-api-call';
-import { AppNavigator } from '../navigation/NavigationIndex';
+import * as types from '../actions/actiontypes';
+import Immutable from 'seamless-immutable';
 
-const nav = (state, action) => {
-  const nextState = AppNavigator.router.getStateForAction(action, state);
-  return nextState || state;
-};
-
-const rootReducer = combineReducers({
-  ...apiReducer,
-  nav
+const initialState = Immutable({
+  root: undefined // 'login' / 'after-login'
+  
 });
 
-export default rootReducer;
+//root reducer
+export function root(state = initialState, action = {}) {
+
+  switch (action.type) {
+    
+    case types.ROOT_CHANGED:
+      return state.merge({
+        root: action.root
+      });
+
+    default:
+      return state;
+  }
+}
