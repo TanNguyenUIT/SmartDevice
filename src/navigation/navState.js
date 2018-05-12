@@ -17,16 +17,4 @@ const navReducer = handleActions(
   initialState,
 );
 
-// const navReducer = (state = initialState, action = {}) => {
-//   switch (action.type) {
-//     case CHANGE_ROOT:
-//       return state.merge({
-//         root: action.payload,
-//       });
-
-//     default:
-//       return state;
-//   }
-// };
-
 export default navReducer;

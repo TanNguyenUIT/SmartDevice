@@ -18,7 +18,7 @@ export const registerScreens = store => {
   Navigation.registerComponent(definedScreens.tabAbout, () => TabAbout, store, Provider);
 };
 
-export const navInitial = { type: CHANGE_ROOT, payload: 'login' };
+export const navInitial = { type: CHANGE_ROOT, payload: 'main' };
 
 export const startApp = root => {
   switch (root) {
