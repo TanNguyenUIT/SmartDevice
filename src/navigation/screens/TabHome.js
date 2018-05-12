@@ -2,21 +2,19 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
-import { changeRoot, pushScreen } from '../navActions';
+import { changeRoot } from '../navActions';
+import { definedScreens } from '../navIndex';
+import localization from '../../util/localization';
 
-const TabHome = ({ onPressAddDevice, navigator }) => (
+const TabHome = ({ onPressAddDevice, onPressControlDevice }) => (
   <View style={{ flex: 1 }}>
     <Text>Danh sách các thiết bị</Text>
 
-    <TouchableOpacity
-      onPress={() =>
-        navigator.push({
-          title: 'Add Device',
-          screen: 'addDeviceScreen',
-        })
-      }
-    >
+    <TouchableOpacity onPress={onPressAddDevice}>
       <Text>Thêm thiết bị</Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={onPressControlDevice}>
+      <Text>Điều khiển thiết bị</Text>
     </TouchableOpacity>
   </View>
 );
@@ -28,11 +26,19 @@ const HOCTabHome = compose(
     }),
     {
       changeRoot,
-      pushScreen,
     },
   ),
   withHandlers({
-    onPressAddDevice: ({ changeRoot }) => () => changeRoot('addDevice'),
+    onPressAddDevice: ({ navigator }) => () =>
+      navigator.push({
+        title: localization.addDevice,
+        screen: definedScreens.addDeviceScreen,
+      }),
+    onPressControlDevice: ({ navigator }) => () =>
+      navigator.push({
+        title: localization.controlDevice,
+        screen: definedScreens.controlDeviceScreen,
+      }),
   }),
 )(TabHome);
 

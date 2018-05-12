@@ -7,12 +7,14 @@ import Login from './screens/Login';
 import TabHome from './screens/TabHome';
 import TabAbout from './screens/TabAbout';
 import AddDevice from './screens/AddDevice';
+import ControlDevice from './screens/ControlDevice';
 
 export const definedScreens = {
   loginScreen: 'loginScreen',
   tabHomeScreen: 'tabHomeScreen',
   tabAboutScreen: 'tabAboutScreen',
   addDeviceScreen: 'addDeviceScreen',
+  controlDeviceScreen: 'controlDeviceScreen',
 };
 
 export const registerScreens = store => {
@@ -20,6 +22,12 @@ export const registerScreens = store => {
   Navigation.registerComponent(definedScreens.tabHomeScreen, () => TabHome, store, Provider);
   Navigation.registerComponent(definedScreens.tabAboutScreen, () => TabAbout, store, Provider);
   Navigation.registerComponent(definedScreens.addDeviceScreen, () => AddDevice, store, Provider);
+  Navigation.registerComponent(
+    definedScreens.controlDeviceScreen,
+    () => ControlDevice,
+    store,
+    Provider,
+  );
 };
 
 export const navInitial = { type: CHANGE_ROOT, payload: 'main' };
@@ -31,17 +39,6 @@ export const startApp = root => {
         screen: {
           screen: definedScreens.loginScreen,
           title: 'Welcome',
-          navigatorStyle: {},
-          navigatorButtons: {},
-        },
-      });
-      break;
-
-    case 'addDevice':
-      Navigation.startSingleScreenApp({
-        screen: {
-          screen: definedScreens.addDeviceScreen,
-          title: localization.addDevice,
           navigatorStyle: {},
           navigatorButtons: {},
         },
@@ -64,6 +61,9 @@ export const startApp = root => {
             backButtonTitle: undefined,
           },
         ],
+        appStyle: {
+          hideBackButtonTitle: true,
+        },
       });
       break;
 
