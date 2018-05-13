@@ -18,6 +18,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 0,
+    'no-mixed-operators': 0,
 
     // 'no-trailing-spaces': 0,
     // 'keyword-spacing': 0,

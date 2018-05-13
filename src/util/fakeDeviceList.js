@@ -19,6 +19,18 @@ const fakeDeviceList = [
     id: '5db8c14b-e60a-4f0a-a768-c4fdc036d84f',
     name: 'Thiết bị 5',
   },
+  {
+    id: 'b5c991a1-29ec-4339-92cc-cac40a22688f',
+    name: 'Thiết bị 6',
+  },
+  {
+    id: '3feb7c3a-854f-422d-9fa0-48651db0be26',
+    name: 'Thiết bị 7',
+  },
+  {
+    id: '0af795af-9ecd-4e4a-80ca-c2583c3004cb',
+    name: 'Thiết bị 8',
+  },
 ];
 
 export default fakeDeviceList;
