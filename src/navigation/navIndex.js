@@ -9,6 +9,9 @@ import TabAbout from './screens/TabAbout';
 import AddDevice from './screens/AddDevice';
 import ControlDevice from './screens/ControlDevice';
 
+const icon = require('../assets/images/icon1.png');
+const selectedIcon = require('../assets/images/icon2.png');
+
 export const definedScreens = {
   loginScreen: 'loginScreen',
   tabHomeScreen: 'tabHomeScreen',
@@ -53,12 +56,16 @@ export const startApp = root => {
             screen: definedScreens.tabHomeScreen,
             title: localization.tabHome,
             backButtonTitle: undefined,
+            icon,
+            selectedIcon,
           },
           {
             label: localization.tabAbout,
             screen: definedScreens.tabAboutScreen,
             title: localization.tabAbout,
             backButtonTitle: undefined,
+            icon,
+            selectedIcon,
           },
         ],
         appStyle: {
